@@ -90,7 +90,7 @@ public class RegExpression1 {
     @Test
     @DisplayName("h로 시작하고 t로 끝나며 그 사이에 어떤 문자가 0개 이상")
     void start_with_h_end_with_t() {
-        //h로 시작하고 t로 끝나며 그 사이에 어떤 문자가 1개 이상
+        //h로 시작하고 t로 끝나며 그 사이에 어떤 문자가 0개 이상
         String regex = "h.*t"; // .* == 어떤 문자가 0개 이상
 
         assertThat("hat").matches(regex);
