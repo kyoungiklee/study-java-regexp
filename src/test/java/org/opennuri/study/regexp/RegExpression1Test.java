@@ -48,6 +48,21 @@ class RegExpression1Test {
         assertThat("ht".matches(regex)).isEqualTo(false);
     }
 
+    /*public class EmailValidator {
+
+        private static final String EMAIL_REGEX =
+                "^[a-zA-Z0-9_+&*-]+(?:\\." +
+                        "[a-zA-Z0-9_+&*-]+)*@" +
+                        "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                        "A-Z]{2,7}$";
+
+        public static boolean isValidEmail(String email) {
+            Pattern pattern = Pattern.compile(EMAIL_REGEX);
+            Matcher matcher = pattern.matcher(email);
+            return matcher.matches();
+        }
+    }*/
+
 
     @Test
     @DisplayName("Grouping")
