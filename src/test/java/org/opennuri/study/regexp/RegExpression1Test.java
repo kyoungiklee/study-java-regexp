@@ -34,9 +34,27 @@ class RegExpression1Test {
     }
 
     @Test
-
     void email_should_include_at() {
-        String regExpr = "^";
+        String regExpr = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@";
     }
 
+    @Test
+    @DisplayName("h로 시작하고 a가 1개이상 반복되고 t로 끝나는 문자")
+    void start_with_h_end_with_t_and_repeat_a() {
+        String regex = "^ha+t$";
+        assertThat("hat".matches(regex)).isEqualTo(true);
+        assertThat("haaat".matches(regex)).isEqualTo((true));
+        assertThat("ht".matches(regex)).isEqualTo(false);
+    }
+
+
+    @Test
+    @DisplayName("Grouping")
+    void test_grouping() {
+        // \w 알파벳 대문자 + 소문자 + 숫자 + "_" 하나
+        // \s 공백, 탭 하나
+        String pattern = "(\\w)(\\s+)(\\w)";
+        log.info("Hello    world".replaceAll(pattern, "-"));
+        log.info("Hello    world".replaceAll(pattern, "$1-$3"));
+    }
 }
