@@ -33,9 +33,10 @@ class RegExpression1Test {
 
     }
 
+    //todo 메일 체크용 정규표현식 확인하기
     @Test
     void email_should_include_at() {
-        String regExpr = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@";
+        String regExpr = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
     }
 
     @Test
