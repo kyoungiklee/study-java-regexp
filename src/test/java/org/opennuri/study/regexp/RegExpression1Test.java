@@ -3,6 +3,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
@@ -37,6 +40,13 @@ class RegExpression1Test {
     @Test
     void email_should_include_at() {
         String regExpr = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+
+        String regex = "^[a-zA-Z0-9_+*&-]+(\\.[a-zA-Z0-9_+&*-]+)";
+        String source = "aaAA09_-+*&azAZ09.";
+        Matcher matcher = Pattern.compile(regex).matcher(source);
+        while (matcher.find()) {
+            log.info(matcher.group());
+        }
     }
 
     @Test
@@ -73,4 +83,44 @@ class RegExpression1Test {
         log.info("Hello    world".replaceAll(pattern, "-"));
         log.info("Hello    world".replaceAll(pattern, "$1-$3"));
     }
+
+    @Test
+    @DisplayName("anchors 테스트")
+    void test_anchors() {
+        //^부터 $까지의 모든 문자열이 패턴과 일치해야 함.
+        assertThat("abc".matches("^abc$")).isEqualTo(true);
+        // 문자열 시작부터 패턴과 일치해야 함.
+        // (^abc)+(\w|\s)+ abc로 시작하고 문자 또는 공백이 올수 있음
+        assertThat("abc def ghi".matches("(^abc)(\\w|\\s)+")).isEqualTo(true);
+        assertThat("def ghi abc".matches("(\\w|\\s)+abc$")).isEqualTo(true);
+
+    }
+
+    @Test
+    @DisplayName("전후방탐색자(Lookaround, Lookbehind")
+    void test_look_around() {
+        //전방탐색자(?=) 123(?=abc) 123을 찾는데 뒤에 abc가 오는 123을 찾음
+        Matcher matcher = Pattern.compile("123(?=abc)").matcher("123abc");
+        assertThat(matcher.find()).isEqualTo(true);
+        assertThat(matcher.group()).isEqualTo("123");
+
+        //전방탐색자(?!) 123(?!abc) 123을 찾는데 뒤에 abc가 오지 않는 123을 찾음
+        matcher = Pattern.compile("123(?!abc)").matcher("123def");
+        assertThat(matcher.find()).isEqualTo(true);
+        assertThat(matcher.group()).isEqualTo("123");
+
+        //후방탐색자(?<=) (?<=abc)123 123을 찾는데 앞에 abc가 오는 123을 찾음
+        matcher = Pattern.compile("(?<=abc)123").matcher("abc123");
+        assertThat(matcher.find()).isEqualTo(true);
+        assertThat(matcher.group()).isEqualTo("123");
+
+        //후방탐색자(?<!) (?<!abc)123 123을 찾는데 앞에 abc가 오지않는 123을 찾음
+        matcher = Pattern.compile("(?<!abc)123").matcher("def123");
+        assertThat(matcher.find()).isEqualTo(true);
+        assertThat(matcher.group()).isEqualTo("123");
+
+
+    }
+
+
 }
