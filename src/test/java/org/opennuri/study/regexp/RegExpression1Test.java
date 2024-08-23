@@ -118,8 +118,6 @@ class RegExpression1Test {
         matcher = Pattern.compile("(?<!abc)123").matcher("def123");
         assertThat(matcher.find()).isEqualTo(true);
         assertThat(matcher.group()).isEqualTo("123");
-
-
     }
 
 
