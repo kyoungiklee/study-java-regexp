@@ -48,7 +48,7 @@ class Chapter05Test {
     @DisplayName("문자가 없거나 하나 이상 연속하는 문자 찾기")
     void 문자가_없거나_하나_이상_연속하는_문자_찾기() {
 
-        String source = "B. Forth\n" +
+        String source = "B. Forta\n" +
                 "B Forta\n" +
                 "Ben Forta";
         Matcher matcher = Pattern.compile("(?m)B.* Forta$").matcher(source);
