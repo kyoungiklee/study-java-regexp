@@ -1,0 +1,182 @@
+Hello, my name is Ben. Please visit
+my wesite at http://www.forta.com/.
+
+sales.xls
+sales1.xls
+order3.xls
+sales2.xls
+sales3.xls
+apac1.xls
+europe2.xls
+na1.xls
+na2.xls
+sa1.xls
+usa1.xls
+ca1.xls
+
+The phrase "regular expression" is often
+abbreviated as RegEx or regex
+
+
+body {
+	background-color: #fefdb8;
+}
+h1 {
+	background-color: #0000ff;
+}
+div {
+	background-color: #d0f4e6;
+}
+span {
+	background-color: #f08970;
+}
+
+
+var myArray = new Array();
+z...
+if(myArray[0] == 0 {
+...
+}
+
+\home\Ben\sales\
+
+"101","Ben","Forta"
+"102","Jim","James"
+
+"103",Roberta","Robertson"
+"104","Bob",Bobson"
+
+11213
+A1C2E3
+48075
+48237
+M1B4F2
+90046
+H1H2H2
+
+Send personal email to ben@forta.com, For questions
+about a book use support@forta.com. Feel free to send
+unslicited email to spam@frota.com (wouldn't it be
+nice if it were that simple, huh?)
+
+
+Send personal email to ben@forta.com or ben.forta@forta.com, 
+For questions about a book use support@forta.com. 
+If your message is urgent try ben@urgent.forta.com. Feel free to send
+unslicited email to spam@prota.com (wouldn't it be
+nice if it were that simple, huh?)
+
+B. Fotra
+B Forta
+Ben Forta
+
+Hello .ben@forta.com is my email address.
+
+
+The URL is http://www.forta.com/, to connect
+securely use https://www.forta.com/ instead.
+
+
+
+4/8/17
+10-6-2018
+2/2/2
+01-01-01
+
+
+1001: $496.80
+1002: $1290.69
+1003: $26.43
+1004: $613.42
+1005: $7.61
+1006: $414.90
+1007: $25.00
+
+
+This offer is not available to customers
+livinb in <b>AK</b> and <b>HI</b>
+
+
+chapter06
+
+The cat scattered his food all over the room
+
+
+The captain wore this cap and cape proudly as
+he sat listening to the recap of how his 
+crew saved the mem from a capsized vessel. 
+
+
+Please enter the nine-digit id as is 
+appears on your color - coded pass-key.
+
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions targetNamespace="http://tips.cf"
+xmlns:impl="http://tips.cf" xmlns:"intf=http://tips.cf"
+xmlns:apachesoap="http://xml.apache.org/xml-soap"
+
+
+<script>
+function doSpellCheck(from, field) {
+	//make sure not empty
+	if (field.value == '') {
+		return false;
+	}
+	
+	//Init
+	var windowName='spellWindow';
+	var spellCheckURL='spell.cfm?formname=comment&fieldname='+field.name;
+	...
+	//Done
+	retrun false;
+}
+</script>
+
+
+chapter07
+
+Hello, my name is Ben&nbps;Forta, and I am
+the author of multiple books on SQL (including
+MySQL, Oracle PL/SQL, and SQL Server T-SQL),
+Regular&nbsp;&nbsp;&nbsp;Expression, and other subjects.
+
+Pinging hog.forta.com [12.159.46.200]
+with 32 bytes of data:
+
+
+ID: 042
+SEX: M
+DOB: 1967-08-17
+STATUS: Active
+
+chapter08
+
+<body>
+<h1>Welcome to my Homepage</h1>
+Content is divided into two sections:<br/>
+<h2>SQL</h2>
+Information about SQL.
+<h2>RegEx</h2>
+Information about Regular Expression.
+<h2>This is not valid HTML</h3>
+</body>
+
+
+This is a block of of text,
+several words here are are
+repeated, and and they
+should not be
+
+
+Hello, ben@forta.com is my email address
+
+313-555-1234
+248-555-9999
+810-555-9000
+
+
+
+
+
+
