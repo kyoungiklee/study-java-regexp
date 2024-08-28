@@ -181,7 +181,75 @@ chapter09
 <title>Ben Forta's Homepage</title>
 </head>
 
+http://www.forta.com/
+https://mail.forta.com/
+ftp://ftp.forta.com/
+
+ABC01: $23.45
+HGG42: $5.31
+CFMX1: $899.00
+XTC99: $69.96
+Total items found: 4
+
+I paid $30 for 100 apples,
+50 oranges, and 60 pears.
+I saved $5 on this order.
 
 
+chapter10
+123-456-7890
+(123)456-7890
+(123)-456-7890
+(123-456-7890
+1234567890
+123 456 7890
 
 
+<!-- Nav bar -->
+<div>
+    <a href="/home"><img src="/images/home.gif"></a>
+    <img src="/images/spacer.gif>
+    <a href="/search"><img src="images/search.gif"></a>
+    <img src="/images/spacer.gif>
+    <a href="/help"><img src="/imgage/help.gif"></a>
+</div>
+
+
+11111
+22222
+33333-
+44444-4444
+
+
+chapter11
+
+북미 전화번호
+J.Doe: 248-555-1234
+B. Smith: (313) 555-1234
+A. Lee: (810)555 1234
+M. Jones: 734.555.9999
+
+
+미국 우편번호
+999 1st Avenue, Bigtown, NY, 11222
+123 High Street, Any City, MI 48034-1234
+
+캐나다 우편번호
+123 4th Street, Toronto, Ontario M1A 1A1
+567 8th Avenue, Montrial, Quebec, H9Z 9Z9
+
+[ABCEGHJKLMNPRSTVXY]\d[A-Z]\s\d[A-Z]\d
+
+영국 우편번호
+171 Kyverdale Road, London N16 6PS
+33 Main Street, Portsmouth, P01 3AX
+18 High Street, London, NW11 8AB
+
+
+외부번호 + 내부번호
+외부번호는 한자리나 두자리로 이루어진 알파벳 문자가 오고, 이 뒤를 이어 한자리나 두자리 숫자가 온다
+또는 한자리나 두자리 문자뒤에 한자리숫자와 한자리 문자가 차례로 온다
+내부번호는 항상 한자리 숫자 뒤에 두자리 문자가 온다 이때 C,I,K,M,O,V는 제외한다. 내부번호로 전혀 사요하지 않기 때문이다.
+
+미국 사회보장번호
+John Smith: 123-45-6789
