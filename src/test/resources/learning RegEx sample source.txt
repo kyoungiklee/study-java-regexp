@@ -253,3 +253,60 @@ M. Jones: 734.555.9999
 
 미국 사회보장번호
 John Smith: 123-45-6789
+
+IP 주소
+localhost is 127.0.0.1.
+
+URL
+http:www.forta.com/blog
+https:www.forta.com/blog/index.cfm
+http://www.forta.com
+http://ben:password@www.forta.com/
+http://localhost/index.php?ab=1&c=2
+http://localhost:8500
+
+이메일 주소
+My name is Ben Forta, and my
+email address is ben@forta.com.
+
+HTML 주석
+<!-- Start of page -->
+<html>
+<!-- Start of head -->
+<head>
+<tile>My Title</title> <!-- Page Title -->
+</head>
+<!-- Body -->
+<body>
+<h1>Hello world</h1>
+</body>
+</html>
+
+자바스트립트 주석
+<script language="javascript">
+// Turn off field used only by replace
+function hideReplaceFields() {
+    document.getElementById('RegExReplace').disabled=true;
+    document.getElementById('replaceheader').disabled=true;
+}
+// Turn on fields used only by replace
+function showReplaceFields() {
+    document.getElementById('RegExReplace').disabled=false;
+    document.getElementById('replaceheader').disabled=false;
+}
+</script>
+
+신용카드번호
+MasterCard: 5212345678901234
+Visa 1: 4123456789012
+Visa 2: 4123456789012345
+Amex: 371234567890123
+Discover: 601112345678901234
+Diners Club: 38812345678901
+
+
+MasterCard: 5[1-5]\d{14}
+Visa: 4\d{12}(\d{3})?
+Amex: 3[47]\d{13}
+Discover: 6011\d{14}
+Diners Club: (30[0-5]|36\d|38\d)\d{11}
