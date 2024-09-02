@@ -136,7 +136,7 @@ function doSpellCheck(from, field) {
 
 chapter07
 
-Hello, my name is Ben&nbps;Forta, and I am
+Hello, my name is Ben&nbsp;Forta, and I am
 the author of multiple books on SQL (including
 MySQL, Oracle PL/SQL, and SQL Server T-SQL),
 Regular&nbsp;&nbsp;&nbsp;Expression, and other subjects.
@@ -152,6 +152,7 @@ STATUS: Active
 
 chapter08
 
+<html>
 <body>
 <h1>Welcome to my Homepage</h1>
 Content is divided into two sections:<br/>
@@ -161,6 +162,7 @@ Information about SQL.
 Information about Regular Expression.
 <h2>This is not valid HTML</h3>
 </body>
+</html>
 
 
 This is a block of of text,
