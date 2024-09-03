@@ -85,6 +85,68 @@ class Chapter08Test {
     @Test
     @DisplayName("치환 작업 수행하기")
     void 치환_작업_수행하기() {
+        String source = "Hello, ben@forta.com is my email address";
+        Matcher matcher = Pattern.compile("\\w+[\\w\\.]*@[\\w\\.]+\\.\\w+").matcher(source);
+
+        assertThat(matcher.find()).isEqualTo(true);
+
+        String replaced = source.replaceAll("(\\w+[\\w\\.]*@[\\w\\.]+\\.\\w+)", "<a href=\"mailTo=$1\">$1</a>");
+        log.info(replaced);
+
+        assertThat(replaced).isEqualTo("Hello, <a href=\"mailTo=ben@forta.com\">ben@forta.com</a> is my email address");
+
+        source = "313-555-1234\n" +
+                "248-555-9999\n" +
+                "810-555-9000";
+
+        String replaced1 = source.replaceAll("(\\d{3})-(\\d{3})-(\\d{4})", "($1) $2-$3");
+        log.info(replaced1);
+
+        matcher = Pattern.compile("\\(\\d{3}\\) \\d{3}-\\d{4}").matcher(replaced1);
+        List<String> list = matcher.results().map(MatchResult::group).toList();
+        list.forEach(log::info);
+
+    }
+
+    @Test
+    @DisplayName("대소문자 변환하기")
+    void 대소문자_변환하기() {
+        String source = "<html>\n" +
+                "<body>\n" +
+                "<h1>Welcome to my Homepage</h1>\n" +
+                "Content is divided into two sections:<br/>\n" +
+                "<h2>SQL</h2>\n" +
+                "Information about SQL.\n" +
+                "<h2>RegEx</h2>\n" +
+                "Information about Regular Expression.\n" +
+                "<h2>This is not valid HTML</h3>\n" +
+                "</body>\n" +
+                "</html>";
+
+        Matcher matcher = Pattern.compile("(<[Hh]1>)(.*?)(</[Hh]1>)").matcher(source);
+
+        StringBuilder replaced = new StringBuilder();
+        while (matcher.find()) {
+            String upper = matcher.group(1)+matcher.group(2).toUpperCase()+matcher.group(3);
+            matcher.appendReplacement(replaced, upper);
+        }
+        matcher.appendTail(replaced);
+
+        log.info(replaced.toString());
+
+        //모든 태그 대문자로 변경하기
+
+        matcher = Pattern.compile("</?[\\s\\w]*\\s?/?>").matcher(source);
+        replaced = new StringBuilder();
+
+        while (matcher.find()) {
+            String upperCase = matcher.group().toUpperCase();
+            matcher.appendReplacement(replaced, upperCase);
+        }
+        matcher.appendTail(replaced);
+        log.info(replaced.toString());
+
+
 
     }
 }
