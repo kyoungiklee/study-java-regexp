@@ -146,7 +146,5 @@ class Chapter08Test {
         matcher.appendTail(replaced);
         log.info(replaced.toString());
 
-
-
     }
 }

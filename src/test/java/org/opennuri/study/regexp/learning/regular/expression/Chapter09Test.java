@@ -38,7 +38,7 @@ class Chapter09Test {
         String source = "http://www.forta.com/\n" +
                 "https://mail.forta.com/\n" +
                 "ftp://ftp.forta.com/";
-        Matcher matcher = Pattern.compile("(?=:)").matcher(source);
+        Matcher matcher = Pattern.compile("\\w+(?=:)").matcher(source);
         List<String> list = matcher.results().map(MatchResult::group).toList();
         list.forEach(log::info);
     }
