@@ -42,4 +42,42 @@ class Chapter09Test {
         List<String> list = matcher.results().map(MatchResult::group).toList();
         list.forEach(log::info);
     }
+
+    @Test
+    @DisplayName("후방탐색 뒤로 찾기")
+    void 후방탐색_뒤로_찾기() {
+        String source = "ABC01: $23.45\n" +
+                "HGG42: $5.31\n" +
+                "CFMX1: $899.00\n" +
+                "XTC99: $69.96\n" +
+                "Total items found: 4";
+        Matcher matcher = Pattern.compile("\\$[0-9\\.]").matcher(source);
+        List<String> list = matcher.results().map(MatchResult::group).toList();
+        assertThat(list).hasSize(4);
+
+        matcher = Pattern.compile("(?<=\\$)[0-9.]+").matcher(source);
+        List<String> list1 = matcher.results().map(MatchResult::group).toList();
+        assertThat(list1).contains("23.45");
+
+    }
+
+    @Test
+    @DisplayName("부정형 전후방 탐색")
+    void 부정형_전후방_탐색() {
+        String source = "I paid $30 for 100 apples,\n" +
+                "50 oranges, and 60 pears.\n" +
+                "I saved $5 on this order.";
+
+        // 가격을 $ 제외하고 찾고자 할때 - 긍정형 후방탐색으로 찾기
+        Matcher matcher = Pattern.compile("(?<=\\$)\\d+").matcher(source);
+        List<String> list = matcher.results().map(MatchResult::group).toList();
+        assertThat(list).hasSize(2);
+
+        // 수량을 찾고자 할때 - 부정형 후방탐색으로 찾기
+        matcher = Pattern.compile("\\b(?<!\\$)\\d+\\b").matcher(source);
+        List<String> list1 = matcher.results().map(MatchResult::group).toList();
+        list1.forEach(log::info);
+
+        assertThat(list1).hasSize(3);
+    }
 }
