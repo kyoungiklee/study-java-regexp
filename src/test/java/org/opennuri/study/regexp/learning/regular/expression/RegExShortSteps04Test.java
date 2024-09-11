@@ -171,5 +171,56 @@ class RegExShortSteps04Test {
         matcher = Pattern.compile("(?<!Mr\\. )([A-Z]\\w{4})").matcher(source);
         list = matcher.results().map(MatchResult::group).toList();
         assertThat(list).containsExactly("Smith", "Jones", "Daisy");
+
+        // Suppose we are cleaning the database and we have a column of information that stands for percentage.
+        // Unfortunately some people have written numbers as decimal values in the range[0.0, 1.0], while others have written percentage in the range[0.0%, 100.0%]
+        // and still others have witten percentage values, but forgot the literal percent sign.
+        // Using negative lookahead, can you mark only those values that should be but lack the %?
+        // These must be values strictly greater than 1.00 but without a trailing %
+        // No number can contain more than two digits before or after the decimal point
+        // Please note that this solution is extremely difficult. if you can solve this problem without looking at my answer, then you already have great skills in regular expressions
+
+        source = "0.32 100.00 5.6 0.27 98% 12.2% 1.01 0.99% 0.99 13.13 1.10";
+
+        matcher = Pattern.compile("(\\b[1-9]\\d*\\.\\d+\\b)(?!%)").matcher(source);
+        list = matcher.results().map(MatchResult::group).toList();
+        assertThat(list).containsExactly("100.00", "5.6", "1.01", "13.13", "1.10");
+
+    }
+
+    @Test
+    @DisplayName("Step 19: Conditions in Regular Expressions")
+    void conditions_in_regular_expression() {
+        // We have now reached a point where people will no longer use regular expressions.
+        // We've covered probably 95% of the use cases for simple regular expressions,
+        // and everything done in steps 19 to 20 is usually done by a more full-featured text manipulation language like awk or sed
+        // However, let's continue, just so you know what regular expression is really capable of
+        // Although regular expression are not Turing complete, some regular expression offer features that are very similar to a complete programming language
+        // One such feature is the "condition".
+        // Conditional Regex expressions allow if-then-else statements where the selected branch is determined by either the "lookahead" or "lookbehind" we learned about in the previous step.
+        // For example, you might want to match only valid entries in list or dates:
+
+
+        String source = "Dates worked: Feb 28, Feb 29, Feb 30, Mar 30, Mar 31";
+
+        Matcher matcher = Pattern.compile("(?<=Feb )([1-2][0-9])|(?<=Mar )([1-2][0-9]|3[0-1])").matcher(source);
+        List<String> list = matcher.results().map(MatchResult::group).toList();
+        assertThat(list).containsExactly("28", "29", "30", "31");
+
+        // Please note that the above groups are also indexed by month.
+        // We could write a regular expression for all 12 months and capture only valid dates, which would then be grouped into groups indexed by month of the year
+        // The above uses a kind of if-like structure that will only match the first group if "Feb" precedes a number(and similarly for the second).
+        // But what if we wanted to use special handling for February only? Something like "if the number is preceded by 'Feb', do that, else do that other thing."
+        // This is how conditional expression do it:
+
+        //Conditionals are not supported in this regex dialect
+        //matcher = Pattern.compile("(?(?<=Feb )([1-2][0-9])|([1-2][0-9]|3[0-1]))").matcher(source);
+
+    }
+
+    @Test
+    @DisplayName("Step 20: Recursion and further training")
+    void recursion_and_further_training() {
+
     }
 }
