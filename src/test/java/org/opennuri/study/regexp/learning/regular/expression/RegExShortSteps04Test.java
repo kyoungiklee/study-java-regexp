@@ -221,6 +221,7 @@ class RegExShortSteps04Test {
     @Test
     @DisplayName("Step 20: Recursion and further training")
     void recursion_and_further_training() {
+        //Conditionals are not supported in this regex dialect
 
     }
 }
