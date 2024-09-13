@@ -54,6 +54,16 @@ class Chapter10Test {
     }
 
     @Test
+    @DisplayName("전후방탐색조건")
+    void 전후방탐색조건() {
+        String source = "11111\n" +
+                "22222\n" +
+                "33333-\n" +
+                "44444-4444";
+        Matcher matcher = Pattern.compile("").matcher(source);
+    }
+
+    @Test
     @DisplayName("그룹캡쳐")
     void 그룹_캡처() {
 
