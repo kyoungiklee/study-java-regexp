@@ -260,8 +260,8 @@ IP 주소
 localhost is 127.0.0.1.
 
 URL
-http:www.forta.com/blog
-https:www.forta.com/blog/index.cfm
+http://www.forta.com/blog
+https://www.forta.com/blog/index.cfm
 http://www.forta.com
 http://ben:password@www.forta.com/
 http://localhost/index.php?ab=1&c=2
